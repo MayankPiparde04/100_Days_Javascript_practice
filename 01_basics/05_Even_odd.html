@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even and odd</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        <label for="num">Enter the number</label>
+        <input type="number" id="num" />
+        <button id="check">Check</button>
+      </form>
+    </div>
+    <script>
+      const convert = document.getElementById("check");
+      convert.addEventListener("click", function (event) {
+        event.preventDefault();
+        const num = parseFloat(document.getElementById("num").value);
+        if (!isNaN(num)) {
+          if (num % 2 == 0) {
+            alert(`${num} is an even number`);
+          } else {
+            alert(`${num} is an odd number`);
+          }
+        } else {
+          alert("Invalid input. Please enter a number.");
+        }
+      });
+    </script>
+  </body>
+</html>
