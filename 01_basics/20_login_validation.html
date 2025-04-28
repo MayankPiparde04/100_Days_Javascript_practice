@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" />
+      <label for="pass">Password</label>
+      <input type="text" id="pass" />
+      <button id="submit">Submit</button>
+    </form>
+  </body>
+
+  <script>
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#pass");
+    const submit = document.querySelector("#submit");
+
+    submit.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (username.value === "" || password.value === "") {
+        alert("Please fill in all fields");
+      } else {
+        alert("Form submitted successfully");
+        //redirect to another page
+        window.location.href = "another_page.html";
+      }
+    });
+  </script>
+</html>
