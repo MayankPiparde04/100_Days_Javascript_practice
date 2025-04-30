@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Character Counter</title>
+  </head>
+  <body>
+    <input type="text" id="inputField" placeholder="Enter Text" />
+    <p id="charCount">Character Count: 0</p>
+    <script>
+      const inputField = document.getElementById("inputField");
+      const charCount = document.getElementById("charCount");
+
+      inputField.addEventListener("input", () => {
+        const count = inputField.value.length;
+        charCount.textContent = `Character Count: ${count}`;
+        if (count > 10) {
+          alert("Character limit exceeded!");
+        }
+      });
+    </script>
+  </body>
+</html>
