@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" />
+      <label for="pass">Password</label>
+      <input type="password" id="pass" />
+      <button id="submit">Submit</button>
+      <button id="show">Show</button>
+    </form>
+  </body>
+  <script>
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#pass");
+    const submit = document.querySelector("#submit");
+    const show = document.querySelector("#show");
+    let isPasswordVisible = false;
+    submit.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (username.value === "" || password.value === "") {
+        alert("Please fill in all fields");
+      } else {
+        alert("Form submitted successfully");
+        //redirect to another page
+        window.location.href = "another_page.html";
+      }
+    });
+    show.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (isPasswordVisible) {
+        password.type = "password";
+        show.textContent = "Show";
+        isPasswordVisible = false;
+      } else {
+        password.type = "text";
+        show.textContent = "Hide";
+        isPasswordVisible = true;
+      }
+    });
+  </script>
+</html>
